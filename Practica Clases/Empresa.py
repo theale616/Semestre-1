@@ -8,11 +8,11 @@ class Empresa:
     ----------------------------------------------------------------'''
     
     # Línea telefónica número 1.
-    linea1= None
+    linea1= LineaTelefonica_()
     # Línea telefónica número 2.
-    linea2= None
+    linea2= LineaTelefonica_()
     # Línea telefónica número 3.
-    linea3= None
+    linea3= LineaTelefonica_()
     
     '''----------------------------------------------------------------
     # Metodos
@@ -45,10 +45,8 @@ class Empresa:
 	'''
     def darTotalNumeroLlamadas(self):
         
-        return LineaTelefonica_. darNumeroLlamadas
+        return self.linea1.darNumeroLlamadas() + self.linea2.darNumeroLlamadas() + self.linea3.darNumeroLlamadas()
         
-        
-    
     
         # TODO Parte3 PuntoE: Completar el m�todo seg�n la documentaci�n dada.
 
@@ -57,6 +55,9 @@ class Empresa:
 	    # @return Total de minutos de las tres l�neas.
 	'''
     def darTotalMinutos(self):
+
+        return self.linea1.darNumeroMinutos() + self.linea2.darNumeroMinutos() + self.linea3.darNumeroMinutos()
+    
         # TODO Parte3 PuntoF: Completar el m�todo seg�n la documentaci�n dada.
 
     '''
@@ -64,6 +65,7 @@ class Empresa:
 	    # @return Costo total de las tres l�neas.
     '''
     def darTotalCostoLlamadas(self):
+        return self.linea1.darCostoLlamadas()+self.linea2.darCostoLlamadas()+self.linea3.darCostoLlamadas()
         # TODO Parte3 PuntoG: Completar el m�todo seg�n la documentaci�n dada.
 
     '''
@@ -71,6 +73,8 @@ class Empresa:
 	    # @return Costo promedio por minuto.
     '''
     def darCostoPromedioMinuto(self):
+
+        return self.darTotalCostoLlamadas() / self.darTotalMinutos()
         # TODO Parte3 PuntoH: Completar el m�todo seg�n la documentaci�n dada.
 
     '''
@@ -87,6 +91,7 @@ class Empresa:
         # @param pMinutos N�mero de minutos de la llamada. pMinutos > 0.
     '''
     def agregarLlamadaLocalLinea2(self, pMinutos):
+        self.linea2.agregarLlamadaLocal(pMinutos)
         # TODO Parte3 PuntoI: Completar el m�todo seg�n la documentaci�n dada.
 
     '''
@@ -95,6 +100,7 @@ class Empresa:
         # @param pMinutos N�mero de minutos de la llamada. pMinutos > 0.
     '''
     def agregarLlamadaLocalLinea3(self, pMinutos):
+        self.linea3.agregarLlamadaLocal(pMinutos)
         # TODO Parte3 PuntoJ: Completar el m�todo seg�n la documentaci�n dada.
 
     '''
@@ -111,6 +117,7 @@ class Empresa:
         # @param pMinutos N�mero de minutos de la llamada. pMinutos > 0.
     '''
     def agregarLlamadaLargaDistanciaLinea2(self, pMinutos):
+        self.linea2.agregarLlamadaLargaDistancia(pMinutos)
         # TODO Parte3 PuntoK: Completar el m�todo seg�n la documentaci�n dada.
     
     '''
@@ -119,6 +126,7 @@ class Empresa:
         # @param pMinutos N�mero de minutos de la llamada. pMinutos > 0.
     '''
     def agregarLlamadaLargaDistanciaLinea3(self, pMinutos):
+        self.linea3.agregarLlamadaLargaDistancia(pMinutos)
         # TODO Parte3 PuntoL: Completar el m�todo seg�n la documentaci�n dada.
 
     '''
@@ -135,6 +143,7 @@ class Empresa:
         # @param pMinutos N�mero de minutos de la llamada. pMinutos > 0.
     '''
     def agregarLlamadaCelularLinea2(self, pMinutos):
+        self.linea2.agregarLlamadaCelular(pMinutos)
         # TODO Parte3 PuntoM: Completar el m�todo seg�n la documentaci�n dada.
     
     '''
@@ -143,6 +152,7 @@ class Empresa:
         # @param pMinutos N�mero de minutos de la llamada. pMinutos > 0.
     '''
     def agregarLlamadaCelularLinea3(self, pMinutos):
+        self.linea3.agregarLlamadaCelular(pMinutos)
         #TODO Parte3 PuntoN: Completar el m�todo seg�n la documentaci�n dada.
     
     '''
@@ -151,6 +161,8 @@ class Empresa:
     '''
     def reiniciar(self):
         self.linea1.reiniciar()
+        self.linea2.reiniciar()
+        self.linea3.reiniciar()
         # // TODO Parte3 PuntoB: Completar el m�todo para reiniciar las lineas 2 y 3.
 
     '''----------------------------------------------------------------
