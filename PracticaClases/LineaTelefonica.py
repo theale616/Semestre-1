@@ -1,4 +1,4 @@
-class LineaTelefonica_:
+class LineaTelefonica:
     '''----------------------------------------------------------------
     # atributos
     ----------------------------------------------------------------'''
@@ -91,4 +91,3 @@ class LineaTelefonica_:
         self.numeroMinutos += pMinutos
         self.costoLlamadas +=   pMinutos*999
         # TODO Parte2 PuntoG: Completar el método según la documentación dada.
-       
