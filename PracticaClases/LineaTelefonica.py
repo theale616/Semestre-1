@@ -1,7 +1,8 @@
 class LineaTelefonica:
+
     '''----------------------------------------------------------------
-    # atributos
-    ----------------------------------------------------------------'''
+        # atributos
+         ----------------------------------------------------------------'''
     
     saldoDispoible = 0
     descuentoLlamadas = 0.0
@@ -19,6 +20,16 @@ class LineaTelefonica:
     # Metodos
     ----------------------------------------------------------------'''
     
+    def definirEstrato(self, pEstrato):
+        self.estrato = pEstrato
+
+
+
+    def darEstrato (self):
+        return self.estrato
+  
+
+
     def motivarCliente(self):
         if self.numeroMinutos >= 30:
             self.saldo_Dispoible += 1000
@@ -113,4 +124,4 @@ class LineaTelefonica:
         self.numeroLlamadas += 1
         self.numeroMinutos += pMinutos
         self.costoLlamadas += pMinutos * 999
-        # TODO Parte2 PuntoG: Completar el método según la documentación dada.     
+        # TODO Parte2 PuntoG: Completar el método según la documentación dada

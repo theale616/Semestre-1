@@ -1,4 +1,8 @@
-from LineaTelefonica import LineaTelefonica
+from LineaTelefonica.py import LineaTelefonica
+
+
+
+
 class Empresa:
     
     '''----------------------------------------------------------------
@@ -16,12 +20,14 @@ class Empresa:
     # Metodos
     ----------------------------------------------------------------'''
 
-
+     
     def __init__(self):
         self.linea1 = LineaTelefonica()
         self.linea2 = LineaTelefonica()
         self.linea3 = LineaTelefonica()
         # TODO Parte3 PuntoA: Construir linea2 y linea3.
+        
+    
         
     # Retorna la l�nea 1.
     def darLinea1(self):
