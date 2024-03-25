@@ -6,11 +6,11 @@ class Empresa:
     ----------------------------------------------------------------'''
     
     # Línea telefónica número 1.
-    linea1 = 'LineaTelefonica1'
+    linea1 = LineaTelefonica
     # Línea telefónica número 2.
-    linea2 = 'LineaTelefonica2'
+    linea2 = LineaTelefonica
     # Línea telefónica número 3.
-    linea3 = 'LineaTelefonica3'
+    linea3 = LineaTelefonica
     
     '''----------------------------------------------------------------
     # Metodos
@@ -171,10 +171,8 @@ class Empresa:
     # M�todo para la extensi�n 1.
     # @return Respuesta 1.
     def metodo1(self):
-        return "El total de minutos a celular es " + self.darTotalNumeroLlamadas
+        return "El total de minutos a celular es " + self.linea1.cantidadMinutosLlamadasCelular() + self.linea2.cantidadMinutosLlamadasCelular () + self.linea3.cantidadMinutosLlamadasCelular()
+            
 
-
-    # M�todo para la extensi�n 2.
-    # @return Respuesta 2.
     def metodo2(self):
-        return "Valor del bono es " + self.LineaTelefonica.motivarCliente
+        return "Valor del bono es " +LineaTelefonica.cantidadMinutosLlamadasCelular() * 0.02

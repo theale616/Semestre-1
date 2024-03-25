@@ -1,5 +1,4 @@
 class LineaTelefonica:
-    
     '''----------------------------------------------------------------
     # atributos
     ----------------------------------------------------------------'''
@@ -7,10 +6,10 @@ class LineaTelefonica:
     costoMinutosLlamadasCelular = 0
     estrato = 0
     segundosTotal = 0
+    costoLlamadas = 0
     costoLlamadasDolares = 0
     saldoDisponible = 0
     descuentoLlamadas = 0.0
-    
     # Numero de llamadas realizadas
     numeroLlamadas = 0
     # Numero de minutos consumidos
@@ -18,29 +17,18 @@ class LineaTelefonica:
     # Costo total de las llamadas
     costoTotalLlamadas = 0
     
-
-    
     '''----------------------------------------------------------------
     # Metodos
-    ----------------------------------------------------------------'''
-    
-    def definirEstrato(self, pEstrato):
+    -----------------------------------------------------------------'''
+    def darMinutosPorEstrato (self):
+        return self.numeroMinutos*self.estrato
+    def definirEstrado(self, pEstrato):
         self.estrato = pEstrato
-
-
-
     def darEstrato (self):
         return self.estrato
-  
-
-
-    def motivarCliente(self):
+    def motivarCliente (self):
         if self.numeroMinutos >= 30:
             self.saldoDisponible += 1000
-            
-    def bono (self):
-        return 1000
-
     def agregarLlamadaLocal(self, pMinutos):
         self.numeroLlamadas += 1
         self.numeroMinutos += 1
@@ -84,7 +72,6 @@ class LineaTelefonica:
     # Reinicia la línea telefónica, dejando todos sus valores en cero.
     # post: El número de llamadas, número de minutos y costo de llamadas son 0.
     def reiniciar(self):
-        
         self.numeroLlamadas = 0
         self.numeroMinutos = 0
         self.costoLlamadas = 0
@@ -132,9 +119,9 @@ class LineaTelefonica:
     def agregarLlamadaCelular(self, pMinutos):
         self.numeroLlamadas += 1
         self.numeroMinutos += pMinutos
+        self.costoMinutosLlamadasCelular += pMinutos * 999
         self.cantidadMinutosLlamadasCelular += pMinutos
-        self.costoLlamadas += pMinutos * 999
-        self.costoMinutosLlamadasCelular += self.costoLlamadas
+    
 
         # TODO Parte2 PuntoG: Completar el método según la documentación dada.
     def consultarCantidadMinutosCelular (self):
