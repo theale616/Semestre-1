@@ -1,8 +1,4 @@
-from LineaTelefonica.py import LineaTelefonica
-
-
-
-
+from LineaTelefonica import LineaTelefonica
 class Empresa:
     
     '''----------------------------------------------------------------
@@ -10,24 +6,27 @@ class Empresa:
     ----------------------------------------------------------------'''
     
     # Línea telefónica número 1.
-    linea1 = LineaTelefonica
+    linea1 = 'LineaTelefonica1'
     # Línea telefónica número 2.
-    linea2 = LineaTelefonica
+    linea2 = 'LineaTelefonica2'
     # Línea telefónica número 3.
-    linea3 = LineaTelefonica
+    linea3 = 'LineaTelefonica3'
     
     '''----------------------------------------------------------------
     # Metodos
     ----------------------------------------------------------------'''
-
-     
+    def darTotalMinutosPorEstrato(self):
+        return self.linea1.darMinutosPorEstrato () + self.linea2.darMinutosPorEstrato () + self.linea3.darMinutosPorEstrato ()
+    def aplicarDescuentoATodos(self):
+        return float (self.linea1.aplicarDescuento()+ self.linea2.aplicarDescuento ()+ self.linea3.aplicarDescuento())
     def __init__(self):
         self.linea1 = LineaTelefonica()
         self.linea2 = LineaTelefonica()
-        self.linea3 = LineaTelefonica()
+        self.linea3 = LineaTelefonica ()
         # TODO Parte3 PuntoA: Construir linea2 y linea3.
-        
-    
+        self.linea1.definirEstrado(2)
+        self.linea2.definirEstrado(5)
+        self.linea3.definirEstrado(6)
         
     # Retorna la l�nea 1.
     def darLinea1(self):
@@ -49,7 +48,7 @@ class Empresa:
 	    # @return Total de llamadas de las tres l�neas.
 	'''
     def darTotalNumeroLlamadas(self):
-        return self.linea1.darNumeroLlamadas()+ self.linea2.darNumeroLlamadas() + self.linea3.darNumeroLlamadas()
+        return +self.linea1.darNumeroLlamadas()+self.linea2.darNumeroLlamadas()+self.linea3.darNumeroLlamadas()
         # TODO Parte3 PuntoE: Completar el m�todo seg�n la documentaci�n dada.
 
     '''
@@ -57,7 +56,7 @@ class Empresa:
 	    # @return Total de minutos de las tres l�neas.
 	'''
     def darTotalMinutos(self):
-        return self.linea1.darNumeroMinutos() + self.linea2.darNumeroMinutos()+ self.linea3.darNumeroMinutos()
+        return + self.linea1.darNumeroMinutos() + self.linea2.darNumeroMinutos()+ self.linea3.darNumeroMinutos()
         #return 'Total de minutos:' +self.linea1.numeroMinutos()+self.linea2.numeroMinutos()+self.linea3.numeroMinutos()
         # TODO Parte3 PuntoF: Completar el m�todo seg�n la documentaci�n dada.
     '''
@@ -172,13 +171,10 @@ class Empresa:
     # M�todo para la extensi�n 1.
     # @return Respuesta 1.
     def metodo1(self):
-        return "Respuesta 1"
+        return "El total de minutos a celular es " + self.darTotalNumeroLlamadas
+
 
     # M�todo para la extensi�n 2.
     # @return Respuesta 2.
     def metodo2(self):
-        return "Respuesta 2"
-
-    # M�todo para la extensi�n 3.    def aplicarDescuentoATodos(self):
-    def aplicarDescuentoATodos(self):
-        return float(self.linea1.aplicarDescueto()+self.linea2.aplicarDescueto()+self.linea3.aplicarDescueto())
+        return "Valor del bono es " + self.LineaTelefonica.motivarCliente
